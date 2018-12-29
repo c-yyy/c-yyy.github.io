@@ -6,15 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>doc | inpm</title>
+  <title>跨域 | inpm</title>
   <meta name="author" content="inpm.cy@gmail.com">
   
-  <meta name="description" content="个人博客，重在分享">
+  <meta name="description" content="跨域解决方案">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="跨域">
   <meta property="og:site_name" content="inpm">
 
   
@@ -97,131 +97,143 @@ var _hmt = _hmt || [];
   	<div class="content">
     	 
 
-<!-- title -->
-<div class="page-header">
-  <h1 class="archive-title-category"><i class="fa fa-archive"></i> doc</h1>
-</div>
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
 	
-
-	  <div id="top_search"></div>
-
-	  <div class="archive">
-		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2018">2018<b class="caret"></b></h4>
-			<ul id="2018" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-12-29 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/12/29/team/" title="对于团队的一些思考">关于团队</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-12-28 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/12/28/introduce/" title="希望一切都好">博客说明</a></span>
-		
-		</li>			
-		
-		</ul>
+		<div class="page-header">
+			<h1> 跨域</h1>
 		</div>
-
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<div class="col-md-3">
-	<div id="sidebar">
 	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control">
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
 
 
-		
-			
-	<div class="widget">
-		<h4>Categories</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/code/">code<span>1</span></a></li>
-		
-			<li><a href="/categories/doc/">doc<span>2</span></a></li>
-		
-		</ul>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> 跨域解决方案
+		 </div> <!-- alert -->
+	  		
+
+	  <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><ul>
+<li>协议+域名+端口 都相同</li>
+<li>限制Cookie、localStorage、IndexDB、Ajax</li>
+</ul>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><ul>
+<li>通过jsonp跨域</li>
+<li>document.domain + iframe跨域</li>
+<li>location.hash + iframe</li>
+<li>window.name + iframe跨域</li>
+<li>postMessage跨域</li>
+<li>跨域资源共享（CORS）</li>
+<li>nginx代理跨域</li>
+<li>nodejs中间件代理跨域</li>
+<li>WebSocket协议跨域</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>CORS为主流解决方案</li>
+<li>反向代理的配置与使用nodejs中间件原理类似</li>
+<li>各方案优缺点</li>
+</ul>
+	  
 	</div>
 
-		
-			
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/js/">js<span>1</span></a></li>
-		
-			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
-		
-		 
-		</ul>
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2018/12/29/team/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2018/12/28/introduce/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
 	</div>
-
-
-		
-			
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2018/12/29/team/" title="对于团队的一些思考"><i class="fa fa-file-o"></i>关于团队</a>
-      </li>
-    
-      <li>
-        <a href="/2018/12/29/cors/" title="跨域解决方案"><i class="fa fa-file-o"></i>跨域</a>
-      </li>
-    
-      <li>
-        <a href="/2018/12/28/introduce/" title="希望一切都好"><i class="fa fa-file-o"></i>博客说明</a>
-      </li>
-    
-  </ul>
-</div>
-
-		
-			
-<div class="widget">
-	<h4>Links</h4>
-	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/c-yyy" title="My Github account." target="_blank" ]);"="">Github</a></li>
+	<!-- comment -->
 	
-	</ul>
-</div>
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
 
 
+	</div> <!-- col-md-9/col-md-12 -->
 		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-12-29 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    </li><li><a href="/categories/code/">code<span>1</span></a></li>
+  
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/js/">js<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#同源策略"><span class="toc-article-text">同源策略</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#方案"><span class="toc-article-text">方案</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#总结"><span class="toc-article-text">总结</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
 
 
 
-</div>
 	</div>
   </div>
   <div class="container-narrow">
