@@ -6,15 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>About | inpm</title>
+  <title>React16-fiber | inpm</title>
   <meta name="author" content="inpm.cy@gmail.com">
   
-  <meta name="description" content="开心快乐每一天">
+  <meta name="description" content="使用fiber架构重构React总结思考">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="About">
+  <meta property="og:title" content="React16-fiber">
   <meta property="og:site_name" content="inpm">
 
   
@@ -77,33 +77,42 @@
   <div class="container">
   	<div class="content">
     	 
+
+
 	
 		<div class="page-header">
-			<h1> About</h1>
+			<h1> React16-fiber</h1>
 		</div>
 	
 
 
 
-<div class="row page">
+<div class="row post">
 	<!-- cols -->
 	
-	<div class="col-md-12">
+	<div id="top_meta"></div>
+	<div class="col-md-9">
 	
 
 	<!-- content -->
 	<div class="mypage">		
 	  
 		 <div class="alert alert-success description">
-			<i class="fa fa-info-circle"></i> 开心快乐每一天
+			<i class="fa fa-info-circle"></i> 使用fiber架构重构React总结思考
 		 </div> <!-- alert -->
 	  		
 
-	  <h1 id="About"><a href="#About" class="headerlink" title="About"></a>About</h1><ul>
-<li>上海</li>
-<li>2018</li>
-<li>天秤</li>
-<li>大前端</li>
+	  <h1 id="fiber是什么？"><a href="#fiber是什么？" class="headerlink" title="fiber是什么？"></a>fiber是什么？</h1><ul>
+<li>React16中对diff算法的重构</li>
+<li>由stack架构（递归调用阻塞线程）转为fiber架构</li>
+</ul>
+<h1 id="为什么fiber？"><a href="#为什么fiber？" class="headerlink" title="为什么fiber？"></a>为什么fiber？</h1><ul>
+<li>横向对比stack架构</li>
+<li>调度微任务，利用空闲期执行回调</li>
+<li>使diff算法可控可追踪（达到非阻塞目的）</li>
+</ul>
+<h1 id="怎样实现fiber？"><a href="#怎样实现fiber？" class="headerlink" title="怎样实现fiber？"></a>怎样实现fiber？</h1><ul>
+<li>纤维化（纤维队列）<br>我们需要将工作分成更小的部分，并使之能在短时间内运行，让主线程做更高优先级的事情<br>如果线程空闲，那么回到纤维队列</li>
 </ul>
 	  
 	</div>
@@ -111,6 +120,16 @@
 	<div>
   	<center>
 	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2018/12/30/React-stack/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    
 
     
 </div>
@@ -142,6 +161,59 @@ s.setAttribute('data-timestamp', +new Date());
                             
 	</div> <!-- col-md-9/col-md-12 -->
 		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-12-31 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    </li><li><a href="/categories/code/">code<span>3</span></a></li>
+  
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/React/">React<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#fiber是什么？"><span class="toc-article-text">fiber是什么？</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#为什么fiber？"><span class="toc-article-text">为什么fiber？</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#怎样实现fiber？"><span class="toc-article-text">怎样实现fiber？</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
 		
 
 </div><!-- row -->

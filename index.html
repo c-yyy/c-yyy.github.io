@@ -106,7 +106,46 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2018/12/30/reactPro/" title="对实现一个React源码的思考">手写一个精简版React</a>
+			<a href="/2018/12/31/React16-fiber/" title="使用fiber架构重构React总结思考">React16-fiber</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-12-31  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="fiber是什么？"><a href="#fiber是什么？" class="headerlink" title="fiber是什么？"></a>fiber是什么？</h1><ul>
+<li>React16中对diff算法的重构</li>
+<li>由stack架构（递归调用阻塞线程）转为fiber架构</li>
+</ul>
+<h1 id="为什么fiber？"><a href="#为什么fiber？" class="headerlink" title="为什么fiber？"></a>为什么fiber？</h1><ul>
+<li>横向对比stack架构</li>
+<li>调度微任务，利用空闲期执行回调</li>
+<li>使diff算法可控可追踪（达到非阻塞目的）</li>
+</ul>
+<h1 id="怎样实现fiber？"><a href="#怎样实现fiber？" class="headerlink" title="怎样实现fiber？"></a>怎样实现fiber？</h1><ul>
+<li>纤维化（纤维队列）<br>我们需要将工作分成更小的部分，并使之能在短时间内运行，让主线程做更高优先级的事情<br>如果线程空闲，那么回到纤维队列</li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/2018/12/31/React16-fiber/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/12/30/React-stack/" title="对实现一个React(stack)源码的思考">手写一个精简版React</a>
 		</h3>
 		</div>
 	<div class="col-md-4">
@@ -150,7 +189,7 @@
 
 	
 	</div>
-  <a type="button" href="/2018/12/30/reactPro/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/12/30/React-stack/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -323,7 +362,7 @@
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/code/">code<span>2</span></a></li>
+			<li><a href="/categories/code/">code<span>3</span></a></li>
 		
 			<li><a href="/categories/doc/">doc<span>2</span></a></li>
 		
@@ -336,11 +375,11 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/React/">React<span>2</span></a></li>
+		
 			<li><a href="/tags/js/">js<span>1</span></a></li>
 		
 			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
-		
-			<li><a href="/tags/React/">React<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -354,7 +393,11 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2018/12/30/reactPro/" title="对实现一个React源码的思考"><i class="fa fa-file-o"></i>手写一个精简版React</a>
+        <a href="/2018/12/31/React16-fiber/" title="使用fiber架构重构React总结思考"><i class="fa fa-file-o"></i>React16-fiber</a>
+      </li>
+    
+      <li>
+        <a href="/2018/12/30/React-stack/" title="对实现一个React(stack)源码的思考"><i class="fa fa-file-o"></i>手写一个精简版React</a>
       </li>
     
       <li>
@@ -395,7 +438,7 @@
   </div>
   <div class="container-narrow">
   <footer> <p>
-  &copy; 2018 inpm.cy@gmail.com
+  &copy; 2019 inpm.cy@gmail.com
   
     Peace && Love  
 </p>
