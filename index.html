@@ -106,6 +106,86 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2019/01/02/2019-Interview/" title="仅供自己参考">2019面试准备</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2019-01-02  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><ul>
+<li><p>JS基础</p>
+<ul>
+<li>变量类型<br>String、Number、Boolean、Object、null、undefined<br>Symbol(独一无二值,Symbol(‘a’))</li>
+<li>作用域<br>执行上下文、自由变量的向上查找</li>
+<li>this<br>指向最后调用的那个对象<br>箭头函数<br>call、apply、bind(传参不同)</li>
+<li>原型<br><strong>proto</strong>指向其构造函数的prototype<br>instanceof判断一个函数是否是一个变量的构造函数</li>
+<li>闭包<br>函数父级作用域在定义时非执行时<br>封装变量收敛修改权限，变量始终保存在内存中可供其他函数访问<br>做函数返回值、做函数参数传递</li>
+<li>继承<br>原型链继承，类实例指向prototype<br>class类extends</li>
+</ul>
+</li>
+<li><p>异步</p>
+<ul>
+<li>单线程</li>
+<li>event-loop</li>
+<li>jq-deferred -&gt; promise -&gt; async/await</li>
+</ul>
+</li>
+<li><p>框架</p>
+<ul>
+<li>React<br>关注React16<br>fiber架构<br>Redux<br>Nextjs<br>RN</li>
+<li>Vue<br>关注Vue3<br>Vuex<br>Nuxtjs<br>Weex</li>
+<li>Angluar<br>关注Angluar7<br>模版@Input()、@Output()<br>ViewChild、ElementRef<br>rxjs</li>
+</ul>
+</li>
+<li><p>小程序</p>
+<ul>
+<li>wepy</li>
+<li>taro</li>
+<li>小游戏引擎</li>
+</ul>
+</li>
+<li><p>工具自动化</p>
+<ul>
+<li>git</li>
+<li>rollup、webpack</li>
+</ul>
+</li>
+<li><p>Nodejs</p>
+</li>
+<li><p>通讯</p>
+<ul>
+<li>HTTP2</li>
+<li>hybrid</li>
+</ul>
+</li>
+<li><p>HTML、CSS</p>
+</li>
+</ul>
+<h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><ul>
+<li>简历</li>
+<li>话术</li>
+</ul>
+
+	
+	</div>
+  <a type="button" href="/2019/01/02/2019-Interview/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2018/12/31/React16-fiber/" title="使用fiber架构重构React总结思考">React16-fiber</a>
 		</h3>
 		</div>
@@ -149,7 +229,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function performUnitOfWork(wipFiber) &#123;</span><br><span class="line">  beginWork(wipFiber)</span><br><span class="line">  if (wipFiber.child) &#123;</span><br><span class="line">    return wipFiber.child</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 遍历，直到没有child</span><br><span class="line">  let uow = wipFiber</span><br><span class="line">  while (uow) &#123;</span><br><span class="line">    completeWork(uow)</span><br><span class="line">    if (uow.sibling) &#123;</span><br><span class="line">      // Sibling needs to beginWork</span><br><span class="line">      return uow.sibling</span><br><span class="line">    &#125;</span><br><span class="line">    uow = uow.parent</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
-<li><p>fiber流程图<br><img src="https://cdn-images-1.medium.com/max/1600/1*dZtg4-sSt_8FlmFWArAxkA.png" alt="fiber流程图"></p>
+<li><p>fiber流程图<br><img src="../../public/img/fiber.png" alt="fiber流程图"></p>
 </li>
 <li><p>处理更新组件props和state</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function beginWork(wipFiber) &#123;</span><br><span class="line">  if (wipFiber.tag == CLASS_COMPONENT) &#123;</span><br><span class="line">    updateClassComponent(wipFiber);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    updateHostComponent(wipFiber);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function updateHostComponent(wipFiber) &#123;</span><br><span class="line">  if (!wipFiber.stateNode) &#123;</span><br><span class="line">    wipFiber.stateNode = createDomElement(wipFiber);</span><br><span class="line">  &#125;</span><br><span class="line">  const newChildElements = wipFiber.props.children;</span><br><span class="line">  reconcileChildrenArray(wipFiber, newChildElements);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function updateClassComponent(wipFiber) &#123;</span><br><span class="line">  let instance = wipFiber.stateNode;</span><br><span class="line">  if (instance == null) &#123;</span><br><span class="line">    // Call class constructor</span><br><span class="line">    instance = wipFiber.stateNode = createInstance(wipFiber);</span><br><span class="line">  &#125; else if (wipFiber.props == instance.props &amp;&amp; !wipFiber.partialState) &#123;</span><br><span class="line">    // No need to render, clone children from last time</span><br><span class="line">    cloneChildFibers(wipFiber);</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  instance.props = wipFiber.props;</span><br><span class="line">  instance.state = Object.assign(&#123;&#125;, instance.state, wipFiber.partialState);</span><br><span class="line">  wipFiber.partialState = null;</span><br><span class="line"></span><br><span class="line">  const newChildElements = wipFiber.stateNode.render();</span><br><span class="line">  reconcileChildrenArray(wipFiber, newChildElements);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -392,7 +472,7 @@
 		
 			<li><a href="/categories/code/">code<span>3</span></a></li>
 		
-			<li><a href="/categories/doc/">doc<span>2</span></a></li>
+			<li><a href="/categories/doc/">doc<span>3</span></a></li>
 		
 		</ul>
 	</div>
@@ -404,6 +484,8 @@
 		<ul class="tag_box inline list-unstyled">		
 		
 			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
+		
+			<li><a href="/tags/summary/">summary<span>1</span></a></li>
 		
 			<li><a href="/tags/js/">js<span>1</span></a></li>
 		
@@ -421,6 +503,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2019/01/02/2019-Interview/" title="仅供自己参考"><i class="fa fa-file-o"></i>2019面试准备</a>
+      </li>
+    
+      <li>
         <a href="/2018/12/31/React16-fiber/" title="使用fiber架构重构React总结思考"><i class="fa fa-file-o"></i>React16-fiber</a>
       </li>
     
@@ -434,10 +520,6 @@
     
       <li>
         <a href="/2018/12/29/cors/" title="跨域解决方案"><i class="fa fa-file-o"></i>跨域</a>
-      </li>
-    
-      <li>
-        <a href="/2018/12/28/introduce/" title="希望一切都好"><i class="fa fa-file-o"></i>博客说明</a>
       </li>
     
   </ul>
