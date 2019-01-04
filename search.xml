@@ -4,7 +4,57 @@
   
     
     <entry>
-      <title>2019面试准备</title>
+      <title>【#2019面试准备】答案版</title>
+      <link href="/2019/01/04/answer-forU/"/>
+      <url>/2019/01/04/answer-forU/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> doc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> summary </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【#2019面试准备】问题版</title>
+      <link href="/2019/01/04/question-forU/"/>
+      <url>/2019/01/04/question-forU/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HTML、CSS"><a href="#HTML、CSS" class="headerlink" title="HTML、CSS"></a>HTML、CSS</h1><ul><li>清除浮动几种解决方案及优缺点</li><li>页面布局的几种解决方案及优缺点</li><li>谈一谈CSS盒模型</li><li>对创建块级格式化上下文的理解</li><li>CSS选择器权重计算</li></ul><h1 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h1><ul><li>JS有哪些变量类型和内置对象</li><li>对作用域链的理解</li><li>谈一谈闭包</li><li>对原型链的理解</li><li>JS中如何实现继承</li><li>new操作符具体做了什么</li><li>JS中this怎么用</li><li>说一说ajax的过程</li><li>什么是跨域如何解决及每个方案的优缺点</li><li>谈谈你对ES6的理解</li><li>用过哪些设计模式</li><li>TypeScript跟JS有什么区别</li><li>如何实现深浅拷贝</li><li>谈谈eventLoop的理解</li><li>谈一谈对JS异步的理解</li></ul><h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><ul><li>1</li></ul><h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><ul><li>1</li></ul><h1 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h1><ul><li>1</li></ul><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul><li>1</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> doc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> summary </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【#2019面试准备】知识点梳理</title>
       <link href="/2019/01/02/2019-Interview/"/>
       <url>/2019/01/02/2019-Interview/</url>
       
