@@ -136,7 +136,49 @@
 <p>[5]CSS选择器权重计算<br>内联—id—class/伪类/属性—元素/伪元素<br>1—-1—-1—-1</p>
 </blockquote>
 <h1 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h1><blockquote>
-<p>[1]JS有哪些变量类型和内置对象<br>[2]对作用域链的理解<br>[3]谈一谈闭包<br>[4]对原型链的理解<br>[5]JS中如何实现继承<br>[6]new操作符具体做了什么<br>[7]JS中this怎么用<br>[8]说一说ajax的过程<br>[9]什么是跨域如何解决及每个方案的优缺点<br>[10]谈谈你对ES6的理解<br>[11]用过哪些设计模式<br>[12]TypeScript跟JS有什么区别<br>[13]如何实现深浅拷贝<br>[14]谈谈对JS运行机制和eventLoop的理解<br>[15]谈一谈对JS异步的理解</p>
+<p>[1]JS有哪些变量类型和内置对象<br>变量类型:String、Number、Boolean、null、undefined、Symbol<br>内置对象:Object、Array、Date、RegExp、Function、Boolean、Number、String<br>typeof可以用来判断变量的基本类型<br>instanceof可以用来判断实例的构造函数</p>
+</blockquote>
+<blockquote>
+<p>[2]对作用域链的理解<br>执行上下文定义了变量、函数的运行环境隶属于那个对象，例如所有的全局变量、全局函数都是在window对象内<br>作用域链即是自由变量的向上查找，检查当前作用域是否存在这个自由变量，如果没有就向上查找</p>
+</blockquote>
+<blockquote>
+<p>[3]谈一谈闭包、如何创建一个闭包<br>闭包就是指有权访问另一个函数作用域中的变量的函数<br>创建一个闭包可讲函数作为函数的返回值或参数传递<br>坏处就是会造成内存泄漏，不会被垃圾回收<br>（PS：这里看情况可以展开讲垃圾回收的机制）<br>分标记清除和引用计数，V8新增一个ScavengeGC算法，维护两个空间（一个闲置、一个使用，清理非存活，复制呼互换）</p>
+</blockquote>
+<blockquote>
+<p>[4]对原型链的理解<br>实例对象属性的向上查找，检查当前对象是否有该属性，如果没有就向它的构造函数原型上找<br>可用instanceof判断其构造函数<br>最顶层应是null，这也解释了为什么typeof null为Object</p>
+</blockquote>
+<blockquote>
+<p>[5]JS中如何实现继承<br>原型链可以作为链接对象之间的桥梁，那么做继承就是利用这个桥梁<br>为构造函数的原型上增加属性，那么其所有的实例都将拥有这个属性<br>那么说回es6中的extends本质上也应该是用原型链实现的</p>
+</blockquote>
+<blockquote>
+<p>[6]new操作符具体做了什么<br>创建一个新对象<br>this指向这个对象<br>执行代码即对this赋值<br>返回this</p>
+</blockquote>
+<blockquote>
+<p>[7]JS中this怎么用<br>指向最后调用的那个对象<br>在箭头函数中默认指向其第一个父级对象<br>可用call、apply、bind改变this指向<br>其中call可以接受一个参数列表、apply只接受一个参数数组、bind返回的是一个函数</p>
+</blockquote>
+<blockquote>
+<p>[8]说一说ajax的过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let xml = new XMLHttpRequest()</span><br><span class="line">xml.open(&apos;GET&apos;,&apos;xxx;&apos;,true)</span><br><span class="line">xml.send()</span><br><span class="line">xml.onreadystatechange()=&gt;&#123;</span><br><span class="line">  if(xml.readyState===4&amp;&amp;xml.status===200)&#123;</span><br><span class="line">    //...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>[9]什么是跨域如何解决及每个方案的优缺点<br>浏览器有同源策略限制，不允许ajax访问其他域接口<br>协议、域名、端口都要一致<br>JSONP动态创建一个script指定callback</p>
+</blockquote>
+<blockquote>
+<p>[10]谈谈你对ES6的理解<br>新增块级作用域，使变量更加可控<br>新增Object.assign()、拓展运算符，可用做浅拷贝<br>新增Promise对象，使用异步解决callhell<br>新增Set(可用作数组去重)、Map(只能用stinrg做key)数据结构<br>解构赋值、模版字符串使操作对象、字符串更加便利<br>Proxy、Reflect为对象架设一层‘拦截’、监听修改<br>Interator遍历器(调用指针next方法)<br>Generator异步(内部为一个指针对象即Interator遍历器)<br>async/await同步写法异步执行<br>模块化</p>
+</blockquote>
+<blockquote>
+<p>[11]用过哪些设计模式<br>单例<br>工厂<br>代理<br>观察者<br>略，暂时不展开</p>
+</blockquote>
+<blockquote>
+<p>[12]TS跟JS有什么区别<br>TS为JS超集、可以认为是JS未来发展的趋势、遵循的新一代ECMA规范<br>增加静态类型检查、更加严谨</p>
+</blockquote>
+<blockquote>
+<p>[13]如何实现深浅拷贝<br>浅拷贝:Object.assign()、展开运算符<br>深拷贝:JSON.parse(JSON.stringify()),lodash(_.cloneDeep())</p>
+</blockquote>
+<blockquote>
+<p>[14]谈谈对JS运行机制和eventLoop的理解<br>JS自始至终是一个单线程，同一时间只能做一件事<br>eventLoop即事件轮询、宏任务/微任务<br>执行栈中优先执行宏任务、在空闲时执行微任务(requestIdleCallback、react16中fiber架构也用的这个api)</p>
+</blockquote>
+<blockquote>
+<p>[15]谈一谈对JS异步的理解<br>代码不易读、但避免了回调地狱<br>略</p>
 </blockquote>
 <h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><blockquote>
 <p>[1]描述下从浏览器地址输入url到显示页面的整个过程<br>[2]谈cookie、localStorage、sessionStorage区别<br>[3]对性能优化知道哪些<br>[4]对安全性的理解<br>[5]关于HTTP协议类<br>[6]谈一谈对事件机制的理解<br>[7]如何管理路由</p>
@@ -184,7 +226,7 @@
 <h1 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h1><ul>
 <li>[1]JS有哪些变量类型和内置对象</li>
 <li>[2]对作用域链的理解</li>
-<li>[3]谈一谈闭包</li>
+<li>[3]谈一谈闭包、如何创建一个闭包</li>
 <li>[4]对原型链的理解</li>
 <li>[5]JS中如何实现继承</li>
 <li>[6]new操作符具体做了什么</li>
@@ -250,7 +292,7 @@
 		<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><ul>
 <li><p>JS基础</p>
 <ul>
-<li><p>变量类型<br>String、Number、Boolean、Object、null、undefined、Symbol<br>typeof、instanceof<br>操作运算符</p>
+<li><p>变量类型<br>String、Number、Boolean、null、undefined、Symbol<br>typeof、instanceof<br>操作运算符</p>
 </li>
 <li><p>作用域<br>执行上下文、自由变量的向上查找</p>
 </li>
@@ -258,7 +300,7 @@
 </li>
 <li><p>this<br>new一个对象过程<br>指向最后调用的那个对象<br>箭头函数(默认指向其第一个父级对象)<br>call(可以接受一个参数列表)、apply(只接受一个参数数组)、bind(返回的是一个函数)</p>
 </li>
-<li><p>原型<br><strong>proto</strong>指向其构造函数的prototype<br>instanceof判断一个函数是否是一个变量的构造函数</p>
+<li><p>原型<br>实例对象的<strong>proto</strong>指向其构造函数的prototype<br>instanceof判断一个函数是否是一个变量的构造函数</p>
 </li>
 <li><p>闭包<br>函数父级作用域在定义时非执行时<br>封装变量收敛修改权限，变量始终保存在内存中可供其他函数访问<br>做函数返回值、做函数参数传递<br>垃圾回收GC（标记清除、引用计数、ScavengeGC(From-&gt;To)）</p>
 </li>
@@ -271,7 +313,7 @@
 <ul>
 <li>异步<ul>
 <li>单线程</li>
-<li>event-loop（宏任务、微任务、执行栈）</li>
+<li>eventLoop（宏任务、微任务、执行栈）</li>
 <li>jq-deferred -&gt; Promise/Generator -&gt; async/await</li>
 </ul>
 </li>
@@ -280,6 +322,7 @@
 <ul>
 <li>浏览器<ul>
 <li>事件机制</li>
+<li>跨域</li>
 <li>缓存</li>
 <li>渲染（repaint/reflow）</li>
 <li>路由原理hash模式、history模式</li>
@@ -654,9 +697,9 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/js/">js<span>1</span></a></li>
-		
 			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
+		
+			<li><a href="/tags/js/">js<span>1</span></a></li>
 		
 			<li><a href="/tags/summary/">summary<span>3</span></a></li>
 		

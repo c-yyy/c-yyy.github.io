@@ -105,7 +105,7 @@
 	  <h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><ul>
 <li><p>JS基础</p>
 <ul>
-<li><p>变量类型<br>String、Number、Boolean、Object、null、undefined、Symbol<br>typeof、instanceof<br>操作运算符</p>
+<li><p>变量类型<br>String、Number、Boolean、null、undefined、Symbol<br>typeof、instanceof<br>操作运算符</p>
 </li>
 <li><p>作用域<br>执行上下文、自由变量的向上查找</p>
 </li>
@@ -113,7 +113,7 @@
 </li>
 <li><p>this<br>new一个对象过程<br>指向最后调用的那个对象<br>箭头函数(默认指向其第一个父级对象)<br>call(可以接受一个参数列表)、apply(只接受一个参数数组)、bind(返回的是一个函数)</p>
 </li>
-<li><p>原型<br><strong>proto</strong>指向其构造函数的prototype<br>instanceof判断一个函数是否是一个变量的构造函数</p>
+<li><p>原型<br>实例对象的<strong>proto</strong>指向其构造函数的prototype<br>instanceof判断一个函数是否是一个变量的构造函数</p>
 </li>
 <li><p>闭包<br>函数父级作用域在定义时非执行时<br>封装变量收敛修改权限，变量始终保存在内存中可供其他函数访问<br>做函数返回值、做函数参数传递<br>垃圾回收GC（标记清除、引用计数、ScavengeGC(From-&gt;To)）</p>
 </li>
@@ -126,7 +126,7 @@
 <ul>
 <li>异步<ul>
 <li>单线程</li>
-<li>event-loop（宏任务、微任务、执行栈）</li>
+<li>eventLoop（宏任务、微任务、执行栈）</li>
 <li>jq-deferred -&gt; Promise/Generator -&gt; async/await</li>
 </ul>
 </li>
@@ -135,6 +135,7 @@
 <ul>
 <li>浏览器<ul>
 <li>事件机制</li>
+<li>跨域</li>
 <li>缓存</li>
 <li>渲染（repaint/reflow）</li>
 <li>路由原理hash模式、history模式</li>
