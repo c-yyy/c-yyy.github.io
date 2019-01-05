@@ -184,7 +184,7 @@
 <p>[7]如何管理路由<br>hash模式<br>history模式<br>略</p>
 </blockquote>
 <h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><blockquote>
-<p>[1]谈一谈对MVVM的理解<br>MVC与MVVM<br>（这里以Vue举例子）讲三要素<br>响应式原理，Object.defineProperty和Proxy/Reflect<br>模版引擎，就是将模版字符串转化为JS对象<br>render函数负责渲染差异（这里有一diff算法，比较前后帧的差异）</p>
+<p>[1]谈一谈对MVVM的理解<br>MVC与MVVM<br>设计模式为观察者模式<br>这里的ViewModle就是data-&gt;Observer、Dep、Watcher-&gt;view<br>（这里以Vue举例子）讲三要素<br>响应式原理，Object.defineProperty和Proxy/Reflect<br>模版引擎，就是将模版字符串转化为JS对象<br>render函数负责渲染差异（这里有一diff算法，比较前后帧的差异）</p>
 </blockquote>
 <blockquote>
 <p>[2]如何进行服务端渲染SSR（对SEO的理解）<br>与SPA单页应用对比，更友好的SEO、内容更快到达<br>部署的服务器需要处于Node server环境下，会占用更多CPU资源<br>在nuxt内部的整个执行流程中，最先经过的是状态管理中actions中的nuxtServerInit函数<br>然后会经过middleware里的中间件函数，此时，还没有进行数据获取和页面渲染，所以我们可以在中间件函数中执行一些进入路由前的逻辑，比如用户权限判断<br>之后开始获取页面数据，asyncData和data的结果基本相同，我们可以直接调用server的接口，比如理由axios发送http请求获取页面所需的原始数据，然后以对象的形式return出去，此时，Vue对象还没有实例化，所以asyncData里无法调用到this<br>fetch里主要用作填充状态树（store）数据，nuxt中页面一旦跳转，整个vuex状态树就会被重置，这相当于不同页面下vuex独立，nuxt提供了一个api，nuxtServerInit，可以传入两个参数对象，commit、req，这样store中就有了用户鉴权的信息<br>这些全部做完以后，开始实例化Vue对象，这里的逻辑和单页应用是一样的，在组装好整个页面应用之后，nuxt.js会将这个应用返回至前端。注意，这里返回的不是单纯的页面，而是应用。此时的页面局部spa应用的一些性质，比如数据监听双向绑定<br>页面来到前端后，开始执行mount的相关逻辑</p>
