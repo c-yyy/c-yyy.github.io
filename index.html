@@ -181,13 +181,57 @@
 <p>[15]谈一谈对JS异步的理解<br>代码不易读、但避免了回调地狱<br>几种解决方案:<br>jQuery Deferred<br>Promise<br>async/await<br>Generator</p>
 </blockquote>
 <h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><blockquote>
-<p>[1]描述下从浏览器地址输入url到显示页面的整个过程<br>[2]谈cookie、localStorage、sessionStorage区别<br>[3]对性能优化知道哪些<br>[4]对安全性的理解<br>[5]关于HTTP协议类<br>[6]谈一谈对事件机制的理解<br>[7]如何管理路由</p>
+<p>[1]描述下从浏览器地址输入url到显示页面的整个过程<br>DNS解析，将域名转ip并向上查找服务器，中间可以做DNS多级缓存（负载均衡）<br>通过ip向服务器发起TCP连接，三次握手<br>发送HTTP请求，请求报文（请求行、请求头、空行、请求体）<br>服务器处理请求并返回HTTP报文，响应报文（响应行、响应头、空行、响应体）<br>（PS:http缓存，从响应头/请求头中可以得出last-Modify/if-Modify-since、ETag/if-None-Match、Cache-Control/Expires）<br>浏览器解析渲染页面，这里进行render树的构建，dom树-&gt;css树-&gt;layout/reflow(计算)-&gt;Painting<br>连接结束，四次挥手</p>
+</blockquote>
+<blockquote>
+<p>[2]谈cookie、localStorage、sessionStorage区别<br>cookie会在http请求中携带，会在服务器和客户端间传递，所以cookie会有大小限制，不能超过4k，而且存在在设定的path下<br>sessionStorage和localStorage只会存在本地，大小要比cookie大，其中sessionStorage是仅在当前的会话窗口有效，不是所有窗口都可以共享数据的。其它两个是真个浏览器都可以数据共享</p>
+</blockquote>
+<blockquote>
+<p>[3]对性能优化知道哪些<br>网络层，减少请求（合并js/css、雪碧图、base64图片）、压缩体积（js/css压缩、gzip）、做缓存（DNS缓存、CDN预解析、http缓存）<br>渲染层，结构尽量扁平化、DOM优化（事件代理）、避免重排重绘</p>
+</blockquote>
+<blockquote>
+<p>[4]对安全性的理解<br>XSS防止脚本注入，加入一些转译<br>CSRF防止请求伪造，加入hash/token验证等<br>密码加盐</p>
+</blockquote>
+<blockquote>
+<p>[5]关于HTTP协议类<br>状态码<br>http缓存<br>管线化<br>持久连接</p>
+</blockquote>
+<blockquote>
+<p>[6]谈一谈对事件机制的理解<br>捕获冒泡，window<->document<->html<->body<->elem<br>event.preventDefault()阻止默认事件<br>event.stopPropagation()阻止冒泡（防止父级元素响应）<br>event.stopImmediatePropagation()注册两个事件，a,b;在a中加该事件，可阻止b的注册事件触发<br>event.currentTarget事件委托，环形事件注册，将子元素代理到父元素的事件上，当触发时需要获取当前绑定的事件的对象（父级元素）<br>event.target//IE 中event.sourceElement<br>获取当前触发的目标对象(子级元素）<br>DOM0(onclick)、DOM2(addEventLisener(‘click’),true捕获/false冒泡)、DOM3(addEventLisener(‘keyup’))<br>自定义事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let eve = new Event(&apos;custom&apos;)/CustomEvent(&apos;custom&apos;,params)</span><br><span class="line">$(&apos;div&apos;).addEventLisener(&apos;custom&apos;,()=&gt;&#123;&#125;)</span><br><span class="line">$(&apos;div&apos;).dispatchEvent(eve)</span><br></pre></td></tr></table></figure></-></-></-></-></p>
+</blockquote>
+<blockquote>
+<p>[7]如何管理路由<br>hash模式<br>history模式<br>略</p>
 </blockquote>
 <h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><blockquote>
-<p>[1]谈一谈对MVVM的理解<br>[2]如何进行服务端渲染SSR（对SEO的理解）<br>[3]对某框架源码有过了解没（问框架原理）<br>[4]说一说对组件化、模块化开发的理解<br>[5]有做过自己的组件库吗<br>[6]参与过上线/回滚整套流程吗</p>
+<p>[1]谈一谈对MVVM的理解<br>MVC与MVVM<br>（这里以Vue举例子）讲三要素<br>响应式原理，Object.defineProperty和Proxy/Reflect<br>模版引擎，就是将模版字符串转化为JS对象<br>render函数负责渲染差异（这里有一diff算法，比较前后帧的差异）</p>
+</blockquote>
+<blockquote>
+<p>[2]如何进行服务端渲染SSR（对SEO的理解）<br>与SPA单页应用对比，更友好的SEO、内容更快到达<br>部署的服务器需要处于Node server环境下，会占用更多CPU资源</p>
+</blockquote>
+<p>在nuxt内部的整个执行流程中，最先经过的是状态管理中actions中的nuxtServerInit函数</p>
+<p>然后会经过middleware里的中间件函数，此时，还没有进行数据获取和页面渲染，所以我们可以在中间件函数中执行一些进入路由前的逻辑，比如用户权限判断</p>
+<p>之后开始获取页面数据，asyncData和data的结果基本相同，我们可以直接调用server的接口，比如理由axios发送http请求获取页面所需的原始数据，然后以对象的形式return出去，此时，Vue对象还没有实例化，所以asyncData里无法调用到this</p>
+<p>fetch里主要用作填充状态树（store）数据，nuxt中页面一旦跳转，整个vuex状态树就会被重置，这相当于不同页面下vuex独立，nuxt提供了一个api，nuxtServerInit，可以传入两个参数对象，commit、req，这样store中就有了用户鉴权的信息</p>
+<p>这些全部做完以后，开始实例化Vue对象，这里的逻辑和单页应用是一样的，在组装好整个页面应用之后，nuxt.js会将这个应用返回至前端。注意，这里返回的不是单纯的页面，而是应用。此时的页面局部spa应用的一些性质，比如数据监听双向绑定<br>页面来到前端后，开始执行mount的相关逻辑</p>
+<blockquote>
+<p>[3]对某框架源码有过了解没（问框架原理）<br><a href="https://c-yyy.github.io/2018/12/30/React-stack/">200行实现一个简易的React</a></p>
+</blockquote>
+<blockquote>
+<p>[4]说一说对组件化、模块化开发的理解<br>高内聚、低耦合<br>提高代码复用率、降低代码耦合性</p>
+</blockquote>
+<blockquote>
+<p>[5]有做过自己的组件库吗<br>小程序中有实现过一个注册登录组件和toast组件<br>讲实现思路</p>
+</blockquote>
+<blockquote>
+<p>[6]参与过上线/回滚整套流程吗<br>4个环境，开发、测试、预发布、线上<br>2个分支，新需求开发分支、稳定版修复bug分支</p>
 </blockquote>
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><blockquote>
-<p>[1]用过什么打包工具<br>[2]如何管理项目<br>[3]对项目架构方面有什么看法</p>
+<p>[1]用过什么打包工具<br>rollup，JS模块打包工具<br>Webpack，项目打包构建工具</p>
+</blockquote>
+<blockquote>
+<p>[2]如何管理项目<br>git</p>
+</blockquote>
+<blockquote>
+<p>[3]对项目架构方面有什么看法<br>暂略</p>
 </blockquote>
 <h1 id="Nodejs"><a href="#Nodejs" class="headerlink" title="Nodejs"></a>Nodejs</h1>
 	
