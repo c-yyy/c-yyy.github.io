@@ -159,8 +159,9 @@
 <blockquote>
 <p>[8]说一说ajax的过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let xml = new XMLHttpRequest()</span><br><span class="line">xml.open(&apos;GET&apos;,&apos;xxx;&apos;,true)</span><br><span class="line">xml.send()</span><br><span class="line">xml.onreadystatechange()=&gt;&#123;</span><br><span class="line">  if(xml.readyState===4&amp;&amp;xml.status===200)&#123;</span><br><span class="line">    //...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<p>Http状态码</p>
 <blockquote>
-<p>[9]什么是跨域如何解决及每个方案的优缺点<br>浏览器有同源策略限制，不允许ajax访问其他域接口<br>协议、域名、端口都要一致<br>JSONP动态创建一个script指定callback</p>
+<p>[9]什么是跨域如何解决及每个方案的优缺点<br>浏览器有同源策略限制，不允许ajax访问其他域接口<br>协议、域名、端口都要一致<br><a href="https://c-yyy.github.io/2018/12/29/cors/">跨域</a></p>
 </blockquote>
 <blockquote>
 <p>[10]谈谈你对ES6的理解<br>新增块级作用域，使变量更加可控<br>新增Object.assign()、拓展运算符，可用做浅拷贝<br>新增Promise对象，使用异步解决callhell<br>新增Set(可用作数组去重)、Map(只能用stinrg做key)数据结构<br>解构赋值、模版字符串使操作对象、字符串更加便利<br>Proxy、Reflect为对象架设一层‘拦截’、监听修改<br>Interator遍历器(调用指针next方法)<br>Generator异步(内部为一个指针对象即Interator遍历器)<br>async/await同步写法异步执行<br>模块化</p>
@@ -214,7 +215,7 @@
 <p>[4]说一说对组件化、模块化开发的理解<br>高内聚、低耦合<br>提高代码复用率、降低代码耦合性</p>
 </blockquote>
 <blockquote>
-<p>[5]有做过自己的组件库吗<br>小程序中有实现过一个注册登录组件和toast组件<br>讲实现思路</p>
+<p>[5]了解Vuex/Redux吗<br>Vuex，维护一个store</p>
 </blockquote>
 <blockquote>
 <p>[6]参与过上线/回滚整套流程吗<br>4个环境，开发、测试、预发布、线上<br>2个分支，新需求开发分支、稳定版修复bug分支</p>
@@ -293,7 +294,7 @@
 <li>[2]如何进行服务端渲染SSR（对SEO的理解）</li>
 <li>[3]对某框架源码有过了解没（问框架原理）</li>
 <li>[4]说一说对组件化、模块化开发的理解</li>
-<li>[5]有做过自己的组件库吗</li>
+<li>[5]了解Vuex/Redux吗</li>
 <li>[6]参与过上线/回滚整套流程吗</li>
 </ul>
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul>
@@ -736,13 +737,13 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
-		
 			<li><a href="/tags/js/">js<span>1</span></a></li>
+		
+			<li><a href="/tags/React/">React<span>2</span></a></li>
 		
 			<li><a href="/tags/summary/">summary<span>3</span></a></li>
 		
-			<li><a href="/tags/React/">React<span>2</span></a></li>
+			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
 		
 		 
 		</ul>
