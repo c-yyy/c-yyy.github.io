@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>2019微信公开课有感</title>
+      <link href="/2019/01/17/2019weChat/"/>
+      <url>/2019/01/17/2019weChat/</url>
+      
+        <content type="html"><![CDATA[<h1 id="2019微信公开课"><a href="#2019微信公开课" class="headerlink" title="2019微信公开课"></a>2019微信公开课</h1><h1 id="三个新社交软件"><a href="#三个新社交软件" class="headerlink" title="三个新社交软件"></a>三个新社交软件</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> doc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> realize </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【#2019面试准备】答案版</title>
       <link href="/2019/01/04/answer-forU/"/>
       <url>/2019/01/04/answer-forU/</url>
@@ -55,8 +80,8 @@
     
     <entry>
       <title>【#2019面试准备】知识点梳理</title>
-      <link href="/2019/01/02/2019-Interview/"/>
-      <url>/2019/01/02/2019-Interview/</url>
+      <link href="/2019/01/02/2019interview/"/>
+      <url>/2019/01/02/2019interview/</url>
       
         <content type="html"><![CDATA[<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><ul><li><p>JS基础</p><ul><li><p>变量类型<br>String、Number、Boolean、null、undefined、Symbol<br>typeof、instanceof<br>操作运算符</p></li><li><p>作用域<br>执行上下文、自由变量的向上查找</p></li><li><p>深浅拷贝<br>Object.assign()、展开运算符<br>JSON.parse(JSON.stringify()),lodash(_.cloneDeep())</p></li><li><p>this<br>new一个对象过程<br>指向最后调用的那个对象<br>箭头函数(默认指向其第一个父级对象)<br>call(可以接受一个参数列表)、apply(只接受一个参数数组)、bind(返回的是一个函数)</p></li><li><p>原型<br>实例对象的<strong>proto</strong>指向其构造函数的prototype<br>instanceof判断一个函数是否是一个变量的构造函数</p></li><li><p>闭包<br>函数父级作用域在定义时非执行时<br>封装变量收敛修改权限，变量始终保存在内存中可供其他函数访问<br>做函数返回值、做函数参数传递<br>垃圾回收GC（标记清除、引用计数、ScavengeGC(From-&gt;To)）</p></li><li><p>继承<br>原型链继承，类实例指向prototype<br>class类extends</p></li></ul></li></ul><hr><ul><li>异步<ul><li>单线程</li><li>eventLoop（宏任务、微任务、执行栈）</li><li>jq-deferred -&gt; Promise/Generator -&gt; async/await</li></ul></li></ul><hr><ul><li>浏览器<ul><li>事件机制</li><li>跨域</li><li>缓存</li><li>渲染（repaint/reflow）</li><li>路由原理hash模式、history模式</li><li>性能监控</li></ul></li></ul><hr><ul><li><p>框架</p><ul><li><p>三要素<br>响应式原理Object.defineProperty、Proxy<br>模版引擎（模版字符串-&gt;js对象）<br>渲染render函数（diff后渲染差异）</p></li><li><p>React<br>Redux<br>Nextjs</p></li><li><p>Vue<br>Vuex<br>Nuxtjs</p></li><li><p>Angluar<br>模版@Input()、@Output()<br>ViewChild、ElementRef<br>rxjs</p></li></ul></li></ul><hr><ul><li>小程序<ul><li>wepy</li><li>taro</li><li>小游戏引擎</li></ul></li></ul><hr><ul><li>工具自动化<ul><li>git</li><li>rollup、webpack</li></ul></li></ul><hr><ul><li>Nodejs</li></ul><hr><ul><li>通讯<ul><li>HTTP2</li><li>hybrid</li></ul></li></ul><hr><ul><li>安全<ul><li>XSS、CSRF</li><li>密码加盐</li></ul></li></ul><hr><h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><ul><li>简历</li><li>话术</li></ul>]]></content>
       
