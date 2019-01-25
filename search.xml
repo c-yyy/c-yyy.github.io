@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>归家</title>
+      <link href="/2019/01/25/gohome/"/>
+      <url>/2019/01/25/gohome/</url>
+      
+        <content type="html"><![CDATA[<h1 id="抢票"><a href="#抢票" class="headerlink" title="抢票"></a>抢票</h1><ul><li>在刚开始抢票时，各类分享加速的二维码轰炸了我的pyq</li><li>开始想，这个流量加速包真的有效果没</li><li>那么如果真的要加速，实现的原理是什么</li><li>大家都知道唯一出票机构就是12306</li><li>那么抢票软件是如何让12306能优先处理vip类抢票呢</li><li>那么12306会作出对于这类抢票软件的限制or屏蔽嘛</li><li>提高抢票成功率这明显就已经打破了规则</li><li>12306对于这样违反规则的行为会怎么处理呢</li><li>vip抢票就是高速多刷新，那么对于ip的速度和刷新率会做限制嘛</li><li>总之，我用了低速然后抢到了</li><li>加速包到底是不是交智商税各自判断</li></ul><h1 id="检票"><a href="#检票" class="headerlink" title="检票"></a>检票</h1><ul><li>偶然发现现在做高铁可以直接使用身份证（不用取票</li><li>检票流程还有人脸识别哈哈哈</li></ul><h1 id="假期"><a href="#假期" class="headerlink" title="假期"></a>假期</h1><ul><li>陪陪家人</li><li>和女朋友</li><li>巩固基础并学习一个新技术</li><li>为年后新工作做准备</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> doc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> doc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>myApp</title>
       <link href="/2019/01/17/myApp/"/>
       <url>/2019/01/17/myApp/</url>
