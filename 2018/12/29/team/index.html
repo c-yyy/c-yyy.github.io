@@ -1,108 +1,103 @@
-<!DOCTYPE HTML>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
-  
-  <title>关于团队 | inpm</title>
-  <meta name="author" content="inpm.cy@gmail.com">
-  
-  <meta name="description" content="对于团队的一些思考">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="inpm.cy@gmail.com"><meta name="renderer" content="webkit"><meta name="copyright" content="inpm.cy@gmail.com"><meta name="keywords" content="inpm"><meta name="description" content="个人博客，重在分享"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>关于团队 · Mr.Long's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
 
-  <meta property="og:title" content="关于团队">
-  <meta property="og:site_name" content="inpm">
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
 
-  
-    <meta property="og:image" content="">
-  
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
 
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
 
-  <script src="/js/jquery-2.0.3.min.js"></script>
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
 
-  <!-- analytics -->
-  
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
 
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
 
-
-</head>
-</html>
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">inpm</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class="fa fa-user"></i>About
-			</a>
-		  </li>
-		  
-		</ul>
-      </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
-
-  <div class="container">
-  	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">
-			<h1> 关于团队</h1>
-		</div>
-	
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
 
 
-
-<div class="row post">
-	<!-- cols -->
-	
-	<div id="top_meta"></div>
-	<div class="col-md-9">
-	
-
-	<!-- content -->
-	<div class="mypage">		
-	  
-		 <div class="alert alert-success description">
-			<i class="fa fa-info-circle"></i> 对于团队的一些思考
-		 </div> <!-- alert -->
-	  		
-
-	  <h1 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h1><ul>
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/cat.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">longlongyu</div><div class="profile-signature">for me</div><div class="friends"><div>FRIENDS</div><span><a href="//github.com/Longlongyu" target="_black">friendA</a></span><span><a href="//github.com/" target="_black">friendB</a></span><span><a href="//github.com/" target="_black">friendC</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Mr.Long's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">关于团队</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2018-12-29</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="hexo"> hexo</a></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><h1 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h1><ul>
 <li><p>目标量化<br>对于新需求的把控，需要leader考虑、细化每一个重要的点，kpi是多少，合理分配到研发层，<br>具体实现交给研发，项目排期具问具分，对于前端团队来讲，可以从页面转换率入手，建立订单<br>漏斗模型，做性能分析优化，UI交互优化，每一个具体的层面都需要转化目标</p>
 </li>
 <li><p>解决问题<br>团队配合中，可能会出现kpi未完成，无休止加班，高压迭代，导致一次迭代战线拉长，出现疲惫，<br>效率降低，容易犯错，又如何帮助新人快速融入团队，上手项目。</p>
@@ -121,174 +116,4 @@
 <li>协作成本与执行力</li>
 <li>是否有feedback(反馈机制)</li>
 </ul>
-	  
-	</div>
-
-	<div>
-  	<center>
-	<div class="pagination">
-
-    
-    
-    <a href="/2018/12/30/React-stack/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
-    
-
-    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
-    
-    <a href="/2018/12/29/cors/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
-    
-
-    
-</div>
-
-    </center>
-	</div>
-	
-	<!-- comment -->
-	<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://https-c-yyy-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
-	</div> <!-- col-md-9/col-md-12 -->
-		
-	
-	<div id="side_meta">
-		<div class="col-md-3" id="post_meta"> 
-
-	<!-- date -->
-	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	2018-12-29 
-	</div>
-	
-
-	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    </li><li><a href="/categories/doc/">doc<span>8</span></a></li>
-  
-
-    </ul>
-	</div>
-	
-
-	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/hexo/">hexo<span>2</span></a></li>
-    </ul>
-	</div>
-		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
-	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
-	   <div id="toc" class="toc collapse in">
-		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#团队"><span class="toc-article-text">团队</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#个人"><span class="toc-article-text">个人</span></a></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#公共管理"><span class="toc-article-text">公共管理</span></a></li></ol>
-		</div>
-	
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
-
-	</div>
-		
-
-</div><!-- row -->
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://https-c-yyy-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
-
-	</div>
-  </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2019 inpm.cy@gmail.com
-  
-    Peace && Love  
-</p>
- </footer>
-</div> <!-- container-narrow -->
-  
-
-
-  
-<a id="gotop" href="#">   
-  <span>⬆︎TOP</span>
-</a>
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-
-   <script type="text/javascript">      
-     var search_path = "search.xml";
-	 if (search_path.length == 0) {
-	 	search_path = "search.xml";
-	 }
-	 var path = "/" + search_path;
-     searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
-
-</body>
-   </html>
+</article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="https://c-yyy.github.io">inpm.cy@gmail.com</a></p><p> <span>Link:  </span><a href="https://c-yyy.github.io/2018/12/29/team/">https://c-yyy.github.io/2018/12/29/team/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/3.0">CC BY-NC-SA 3.0</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="prevSlogan" href="/2018/12/30/React-stack/" title="手写一个精简版React"><span>< PreviousPost</span><br><span class="prevTitle">手写一个精简版React</span></a><a class="nextSlogan" href="/2018/12/29/cors/" title="跨域"><span>NextPost ></span><br><span class="nextTitle">跨域</span></a><div class="clear"></div></div><div id="comment"></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#团队"><span class="toc-number">1.</span> <span class="toc-text">团队</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#个人"><span class="toc-number">2.</span> <span class="toc-text">个人</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公共管理"><span class="toc-number">3.</span> <span class="toc-text">公共管理</span></a></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>

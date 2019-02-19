@@ -1,358 +1,100 @@
-<!DOCTYPE HTML>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
-  
-  <title>Archives: 2019 | inpm</title>
-  <meta name="author" content="inpm.cy@gmail.com">
-  
-  <meta name="description" content="个人博客，重在分享">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="inpm.cy@gmail.com"><meta name="renderer" content="webkit"><meta name="copyright" content="inpm.cy@gmail.com"><meta name="keywords" content="inpm"><meta name="description" content="个人博客，重在分享"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Mr.Long's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
 
-  
-  <meta property="og:site_name" content="inpm">
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
 
-  
-    <meta property="og:image" content="">
-  
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
 
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
 
-  <script src="/js/jquery-2.0.3.min.js"></script>
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
 
-  <!-- analytics -->
-  
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
 
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
 
-
-</head>
-</html>
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">inpm</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class="fa fa-user"></i>About
-			</a>
-		  </li>
-		  
-		</ul>
-      </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
-
-  <div class="container">
-  	<div class="content">
-    	 
-
-<!-- title -->
-<div class="page-header">
-  <h1 class="archive-title"><i class="fa fa-archive"></i> 2019</h1>
-</div>
-
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
-	
-
-	  <div id="top_search"></div>
-
-	  <div class="archive">
-		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2019">2019<b class="caret"></b></h4>
-			<ul id="2019" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-01-25 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/01/25/gohome/" title="记录从上海回到老家">归家</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-01-17 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/01/17/myApp/" title="茴香的茴有几种写法">我想做一个app</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-01-17 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/01/17/2019weChat/" title="观2019微信公开课有感及对三个新社交软件理解">2019微信公开课有感</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-01-04 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/01/04/answer-forU/" title="面试复习-答案版（建议找小伙伴一问一答）">【#2019面试准备】答案版</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-01-04 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/01/04/question-forU/" title="面试复习-问题版（建议找小伙伴一问一答）">【#2019面试准备】问题版</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2019-01-02 </span> &raquo;
-		
-		   <span class="title"><a href="/2019/01/02/2019interview/" title="面试知识点梳理">【#2019面试准备】知识点梳理</a></span>
-		
-		</li>			
-		
-		
-		
-			
-			</ul>
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2018">2018<b class="caret"></b></h4>
-			<ul id="2018" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-12-31 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/12/31/React16-fiber/" title="使用fiber架构重构React总结思考">React16-fiber</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-12-30 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/12/30/React-stack/" title="对实现一个React(stack)源码的思考">手写一个精简版React</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-12-29 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/12/29/team/" title="对于团队的一些思考">关于团队</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-12-29 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/12/29/cors/" title="跨域解决方案">跨域</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2018-12-28 </span> &raquo;
-		
-		   <span class="title"><a href="/2018/12/28/introduce/" title="希望一切都好">博客说明</a></span>
-		
-		</li>			
-		
-		</ul>
-		</div>
-
-</div> <!-- col-md-9/col-md-12 -->
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
 
 
-<div class="col-md-3">
-	<div id="sidebar">
-	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control">
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
-
-
-		
-			
-	<div class="widget">
-		<h4>Categories</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/code/">code<span>3</span></a></li>
-		
-			<li><a href="/categories/doc/">doc<span>8</span></a></li>
-		
-		</ul>
-	</div>
-
-		
-			
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/hexo/">hexo<span>2</span></a></li>
-		
-			<li><a href="/tags/summary/">summary<span>3</span></a></li>
-		
-			<li><a href="/tags/js/">js<span>1</span></a></li>
-		
-			<li><a href="/tags/React/">React<span>2</span></a></li>
-		
-			<li><a href="/tags/doc/">doc<span>1</span></a></li>
-		
-			<li><a href="/tags/idea/">idea<span>1</span></a></li>
-		
-			<li><a href="/tags/realize/">realize<span>1</span></a></li>
-		
-		 
-		</ul>
-	</div>
-
-
-		
-			
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2019/01/25/gohome/" title="记录从上海回到老家"><i class="fa fa-file-o"></i>归家</a>
-      </li>
-    
-      <li>
-        <a href="/2019/01/17/myApp/" title="茴香的茴有几种写法"><i class="fa fa-file-o"></i>我想做一个app</a>
-      </li>
-    
-      <li>
-        <a href="/2019/01/17/2019weChat/" title="观2019微信公开课有感及对三个新社交软件理解"><i class="fa fa-file-o"></i>2019微信公开课有感</a>
-      </li>
-    
-      <li>
-        <a href="/2019/01/04/answer-forU/" title="面试复习-答案版（建议找小伙伴一问一答）"><i class="fa fa-file-o"></i>【#2019面试准备】答案版</a>
-      </li>
-    
-      <li>
-        <a href="/2019/01/04/question-forU/" title="面试复习-问题版（建议找小伙伴一问一答）"><i class="fa fa-file-o"></i>【#2019面试准备】问题版</a>
-      </li>
-    
-  </ul>
-</div>
-
-		
-			
-<div class="widget">
-	<h4>Links</h4>
-	<ul class="blogroll list-unstyled">
-	
-		<li><i class="fa fa-github"></i><a href="https://github.com/c-yyy" title="My Github account." target="_blank" ]);"="">Github</a></li>
-	
-	</ul>
-</div>
-
-
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
-
-
-
-</div>
-	</div>
-  </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2019 inpm.cy@gmail.com
-  
-    Peace && Love  
-</p>
- </footer>
-</div> <!-- container-narrow -->
-  
-
-
-  
-<a id="gotop" href="#">   
-  <span>⬆︎TOP</span>
-</a>
-
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-
-   <script type="text/javascript">      
-     var search_path = "search.xml";
-	 if (search_path.length == 0) {
-	 	search_path = "search.xml";
-	 }
-	 var path = "/" + search_path;
-     searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
-
-</body>
-   </html>
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/cat.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">longlongyu</div><div class="profile-signature">for me</div><div class="friends"><div>FRIENDS</div><span><a href="//github.com/Longlongyu" target="_black">friendA</a></span><span><a href="//github.com/" target="_black">friendB</a></span><span><a href="//github.com/" target="_black">friendC</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Mr.Long's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1>Mr.Long's Blog</h1><h5>Welcome to my Blog!</h5><div class="intro-social"><a class="fa fa-github" href="//github.com/" target="_blank" title="github"></a><a class="fa fa-weibo" href="//www.weibo.com" target="_blank" title="weibo"></a><a class="fa fa-facebook" href="//www.facebook.com" target="_blank" title="facebook"></a><a class="fa fa-twitter" href="//twitter.com" target="_blank" title="twitter"></a><a class="fa fa-rss" href="/atom.xml" target="_blank" title="rss"></a></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><div id="archive"><div class="article-sort-title">Articles - 11</div><div class="article-sort"><div class="article-sort-item year">2019</div><div class="article-sort-item"><time class="article-sort-item__time">2019-01-25</time><a class="article-sort-item__title" href="/2019/01/25/gohome/" target="_blank">归家</a></div><div class="article-sort-item"><time class="article-sort-item__time">2019-01-17</time><a class="article-sort-item__title" href="/2019/01/17/myApp/" target="_blank">我想做一个app</a></div><div class="article-sort-item"><time class="article-sort-item__time">2019-01-17</time><a class="article-sort-item__title" href="/2019/01/17/2019weChat/" target="_blank">2019微信公开课有感</a></div><div class="article-sort-item"><time class="article-sort-item__time">2019-01-04</time><a class="article-sort-item__title" href="/2019/01/04/answer-forU/" target="_blank">【#2019面试准备】答案版</a></div><div class="article-sort-item"><time class="article-sort-item__time">2019-01-04</time><a class="article-sort-item__title" href="/2019/01/04/question-forU/" target="_blank">【#2019面试准备】问题版</a></div><div class="article-sort-item"><time class="article-sort-item__time">2019-01-02</time><a class="article-sort-item__title" href="/2019/01/02/2019interview/" target="_blank">【#2019面试准备】知识点梳理</a></div></div></div><nav class="cxo-page-nav"><span class="page-number current">1</span></nav></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Site by </span><a href="http://hexo.io"><span>Hexo</span></a><span> | theme </span><a href="https://github.com/Longlongyu/hexo-theme-Cxo"><span>Cxo</span></a></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span></div></footer><!-- catelog--><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
