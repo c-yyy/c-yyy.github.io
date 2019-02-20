@@ -233,7 +233,7 @@
       <link href="/2018/12/29/cors/"/>
       <url>/2018/12/29/cors/</url>
       
-        <content type="html"><![CDATA[<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><ul><li>协议+域名+端口 都相同</li><li>限制Cookie、localStorage、IndexDB、Ajax</li></ul><h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><ul><li>通过jsonp跨域</li><li>document.domain + iframe跨域</li><li>location.hash + iframe</li><li>window.name + iframe跨域</li><li>postMessage跨域</li><li>跨域资源共享（CORS）</li><li>nginx代理跨域</li><li>nodejs中间件代理跨域</li><li>WebSocket协议跨域</li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>CORS为主流解决方案</li><li>反向代理的配置与使用nodejs中间件原理类似</li><li>各方案优缺点</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><ul><li>协议+域名+端口 相同</li><li>限制Cookie、localStorage、IndexDB、Ajax</li></ul><h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><ul><li>通过jsonp跨域</li><li>document.domain + iframe跨域</li><li>location.hash + iframe</li><li>window.name + iframe跨域</li><li>postMessage跨域</li><li>跨域资源共享（CORS）</li><li>nginx代理跨域</li><li>nodejs中间件代理跨域</li><li>WebSocket协议跨域</li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>CORS为主流解决方案</li><li>反向代理的配置与使用nodejs中间件原理类似</li><li>各方案优缺点</li></ul>]]></content>
       
       
       <categories>
