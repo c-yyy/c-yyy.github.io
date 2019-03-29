@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>git常用操作</title>
+      <title>git常用操作及规范化流程</title>
       <link href="/2019/03/28/git-quick-start/"/>
       <url>/2019/03/28/git-quick-start/</url>
       
-        <content type="html"><![CDATA[<p>#</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="日常git一个项目"><a href="#日常git一个项目" class="headerlink" title="日常git一个项目"></a>日常git一个项目</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file_name&gt;</span><br><span class="line">git commit -m &apos;msg&apos;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><h1 id="本地项目git到远程仓库"><a href="#本地项目git到远程仓库" class="headerlink" title="本地项目git到远程仓库"></a>本地项目git到远程仓库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# taro-quick&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/&lt;name&gt;/&lt;repo_name&gt;.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h1 id="多人协作一个项目"><a href="#多人协作一个项目" class="headerlink" title="多人协作一个项目"></a>多人协作一个项目</h1><ul><li>不同分支（建议至少dev,master两个分支）</li><li>避免冲突</li><li>回滚尽量使用git revert</li></ul>]]></content>
       
       
       <categories>
