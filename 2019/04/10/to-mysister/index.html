@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="inpm.cy@gmail.com"><meta name="renderer" content="webkit"><meta name="copyright" content="inpm.cy@gmail.com"><meta name="keywords" content="inpm"><meta name="description" content="个人博客，重在分享"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>写给我还在大一的妹妹 · inpm's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
+
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
+
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
+
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
+
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
+
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
+
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
+
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
+
+
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/cat.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">inpm</div><div class="profile-signature">！ dlrow olleH</div><div class="friends"><div>FRIENDS</div><span><a href="http://www.ruanyifeng.com/home.html" target="_black">ruanyifeng</a></span><span><a href="https://aotu.io/" target="_black">Aotu</a></span><span><a href="http://www.alloyteam.com" target="_black">AlloyTeam</a></span><span><a href="https://taobaofed.org" target="_black">FED</a></span><span><a href="https://fex.baidu.com" target="_black">FEX</a></span><span><a href="dopro.io/" target="_black">Deep Ocean</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">inpm's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">写给我还在大一的妹妹</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2019-04-10</span></span></div><div class="post-intro-read"><span> Word count: <span class="post-count">1.3k</span> | Reading time: <span class="post-count">4</span>min</span></div></div></header><article class="cxo-up" id="cxo-content-outer"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86" style="margin-left:50em" src="//music.163.com/outchain/player?type=2&amp;id=1352896581&amp;auto=1&amp;height=66"></iframe><section id="cxo-content-inner"><article class="article-entry" id="post"><p>你今年19岁，哥哥23岁，关于成长，关于你还没经历的几年，我有一些话想对你说。      </p>
+<p>我好羡慕你的年龄，羡慕你现在大把的机会，羡慕你的不知愁苦，也担心着这种不知愁苦会让你以后付出更多的愁苦。      </p>
+<p>在我刚入大学的时候，我也像你一般的天真烂漫，享受着被隔壁班女生追求的幸福，享受着无尽的自由，我肆无忌惮的挥霍着我的大学时光，恋爱、上网、逃课、逛街、游山玩水…那种岁月静好，确实是我人生中幸福到难以忘记的时光。      </p>
+<p>我是一个小小的本科生，在那个人人知道上进的岁月里，别人学英语，我在玩，别人复习期末考试，我在玩，别人学各种证书，我在玩，别人准备考研，我还在玩。换之而来的结果，我在大三下学期才把四级证书拿到。还有不要听“没有挂科的大学是不完整的”这类话。毕业时，别人捧着一堆证书回家，而我只带回了毕业证。在考研和就业的十字路口，因为自觉得对于考上理想学校差距甚远，并且英语是我的弱项，依然走上了就业的道路。   </p>
+<p>是的，那时候年少轻狂，我并不感觉我会后悔，我告诉自己要享受当下，要去体验大学生活，可是谁也没有说大学的自由代表的是放肆的挥霍父母的血汗钱，谁也没有说大学的自由代表的是挥霍光阴不求上进，谁也没有说大学的自由代表的就是恋爱看夕阳而忘记家里父母期待的眼神…      </p>
+<p>我说这些，并不是说你不准恋爱、不准休息、不准去享受大学的自由和美好，而是希望你恋爱的时候懂得担当、休息的原因是付出后的劳累、享受是因为你发现了大学的时光可以让你去实现自己心中的很多梦想，当你走出大学时，当若干年后你经历过世事沧桑再回过头去看时，有一个词能在你的脑子中出现，那就足够了，这个词叫“无悔”。      </p>
+<p>对于大学的虚度，很快我便尝到了苦头。当我拿着简历发现毫无特长可写时，当我想考取更多的证书和机会却发现往往最低学历要求一本时，当我看着其他同学的学历心中暗暗自卑和羡慕时，我尝到了“后悔”两个字的真正滋味。是呀，读书不是唯一的机会，但是读书确实能给你更多的机会。毕业的这几年，我一边后悔着，一边又麻木的享受着不求上进，总感觉再去学习晚了，其实这是自己不求上进的借口而已，在这个全民学习、终身学习的社会，哪有什么早晚，无非是两种人，一种“活着”一种“死去”。我当了两三年的“死人”，终于在不断的反省中找到了一丝“气息”，我想靠着这一丝“气息”来跟你说说话，希望你永远“活着”。      </p>
+<p>关于你玩手机这个话题，请允许我再唠叨几句。你在家的时候捧着手机，所以你不知道妈妈脸上又多了皱纹，不知道爸爸手上又多了茧子，你在学校的时候捧着手机，所以你不知道学校的夕阳是什么样子，不知道清晨的第一缕风吹在脸上的感觉。捧着手机，让你忘了父母忘了生活，由此，大学并不是你新的开始，只是换了个地方玩手机而已。那么玩手机让你得到了什么？得到了片刻的欢愉和对现实的逃避。失去了什么？失去了心中的亲情，失去了自我，失去了对生活的感悟，你的心将变得无比空洞，关于人生、亲情、生活，你将会感觉越来越遥远，而我不想让我妹妹变成那般的“行尸走肉”，所以，放下手机，去听一听自己的心跳，放下手机，去陪父母聊聊天，放下手机，去迎着朝阳跑一跑，享受那饱含着青春味道的汗水滴落。      </p>
+<p>妹，我一直希望你能多看书，为的不是你的学历，而是你内心的丰富。我一直尽我所能的带你去旅行，不是为了让你换个地方呼吸，而是要增加你的见识。最后，哪怕你的学历不再提升，我也希望你能一直去思考、去充实自己，在我心里，你心灵的富足远比学历的高深要重要，希望你能在不断提升中成长，去体验生活和生命本身，希望你的大学生活能充实而有意义，更加的希望我的妹妹能永远幸福。</p>
+</article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="https://c-yyy.github.io">inpm.cy@gmail.com</a></p><p> <span>Link:  </span><a href="https://c-yyy.github.io/2019/04/10/to-mysister/">https://c-yyy.github.io/2019/04/10/to-mysister/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license" href="https://c-yyy.github.io/">inpm</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="nextSlogan" href="/2019/04/04/Grid-layout/" title="Grid-layout"><span>NextPost ></span><br><span class="nextTitle">Grid-layout</span></a><div class="clear"></div></div><div id="comment"><div id="container"></div><link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css"><script src="https://jjeejj.github.io/js/gitment.js"></script><script>var gitment = new Gitment({
+  id: '写给我还在大一的妹妹',
+  owner: 'c-yyy',
+  repo: 'c-yyy.github.io',
+  oauth: {
+    client_id: 'fe157596ffeca29e1a9e',
+    client_secret: '0af09328f45e9ef5f146802f8a017a536b3c27ad',
+  },
+})
+gitment.render('container')</script></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?" + 'f89462936817407c15d2ab6ce0033780';
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas><script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script type="text/javascript" src="/js/fireworks.js"></script></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
