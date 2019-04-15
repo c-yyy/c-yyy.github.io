@@ -178,16 +178,15 @@ U盘容积不得低于8G
 针对节点进行分析
 基本就是遍历目标节点
 
-基本结构12345678910111213141516171819202122import urllib.requestfrom bs4 import BeautifulSoupimport timeBASE_URL = &apos;https://xxx.com&apos;if __name__ == &apos;__main__&apos;:  while 1:    #获取当前页面    ...</div><div class="recent-post-tags"><a class="post-tag fa fa-tag" href="javascript:void(0)" date-tags="python"> python</a></div><div class="read-more"><a class="more" href="/2019/03/21/crawler/#more">ReadMore</a></div><hr></div><div class="recent-post-item"><div class="post-title"><a href="/2019/03/21/youAreNotReadyEver/">你永运不会准备好,so Just do it!</a></div><div class="post-time"><i class="fa fa-table"></i><time datetime="2019-03-21T07:28:55.000Z">2019-03-21</time></div><div class="recent-post-content"> </div><div class="read-more"><a class="more" href="/2019/03/21/youAreNotReadyEver/#more">ReadMore</a></div><hr></div></section><nav class="cxo-page-nav"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a></nav></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span><script>(function() {
-var int = setInterval(fixCount, 100);
-var busuanziSiteOffset = parseInt({{ theme.busuanzi_site_offset }});
+基本结构12345678910111213141516171819202122import urllib.requestfrom bs4 import BeautifulSoupimport timeBASE_URL = &apos;https://xxx.com&apos;if __name__ == &apos;__main__&apos;:  while 1:    #获取当前页面    ...</div><div class="recent-post-tags"><a class="post-tag fa fa-tag" href="javascript:void(0)" date-tags="python"> python</a></div><div class="read-more"><a class="more" href="/2019/03/21/crawler/#more">ReadMore</a></div><hr></div><div class="recent-post-item"><div class="post-title"><a href="/2019/03/21/youAreNotReadyEver/">你永运不会准备好,so Just do it!</a></div><div class="post-time"><i class="fa fa-table"></i><time datetime="2019-03-21T07:28:55.000Z">2019-03-21</time></div><div class="recent-post-content"> </div><div class="read-more"><a class="more" href="/2019/03/21/youAreNotReadyEver/#more">ReadMore</a></div><hr></div></section><nav class="cxo-page-nav"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a></nav></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span><script>var int = setInterval(fixCount, 100);
+var busuanziSiteOffset = parseInt(theme.count.busuanzi_site_offset);
 function fixCount() {
-    if ($("#busuanzi_container_site_pv").css("display") != "none") {
-      clearInterval(int);
-      $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
-    }
+  if (document.getElementById("busuanzi_container_site_pv").css("display") != "none") {
+    clearInterval(int);
+    document.getElementById("busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
   }
-})();</script><script>var _hmt = _hmt || [];
+}
+console.log('123')</script><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?" + 'f89462936817407c15d2ab6ce0033780';
