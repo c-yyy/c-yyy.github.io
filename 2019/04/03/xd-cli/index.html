@@ -97,7 +97,7 @@
   }
 }( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/cat.png"></div><!--.profile-saying
   i.fa.fa-comment
-  .saying--><div class="cxo-profile-inner"><div class="profile-name">inpm</div><div class="profile-signature">！ dlrow olleH</div><div class="friends"><div>FRIENDS</div><span><a href="http://www.ruanyifeng.com/home.html" target="_black">ruanyifeng</a></span><span><a href="https://aotu.io/" target="_black">Aotu</a></span><span><a href="http://www.alloyteam.com" target="_black">AlloyTeam</a></span><span><a href="https://taobaofed.org" target="_black">FED</a></span><span><a href="https://fex.baidu.com" target="_black">FEX</a></span><span><a href="dopro.io/" target="_black">Deep Ocean</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">inpm's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">xd-cli</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2019-04-03</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="npm"> npm</a></span></div><div class="post-intro-read"><span> Word count: <span class="post-count">584</span> | Reading time: <span class="post-count">2</span>min</span></div></div></header><article class="cxo-up" id="cxo-content-outer"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86" style="margin-left:36em" src="//music.163.com/outchain/player?type=2&amp;id=1352896581&amp;auto=0&amp;height=66"></iframe><section id="cxo-content-inner"><article class="article-entry" id="post"><h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><ul>
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">inpm</div><div class="profile-signature">！ dlrow olleH</div><div class="friends"><div>FRIENDS</div><span><a href="http://www.ruanyifeng.com/home.html" target="_black">ruanyifeng</a></span><span><a href="https://aotu.io/" target="_black">Aotu</a></span><span><a href="http://www.alloyteam.com" target="_black">AlloyTeam</a></span><span><a href="https://taobaofed.org" target="_black">FED</a></span><span><a href="https://fex.baidu.com" target="_black">FEX</a></span><span><a href="dopro.io/" target="_black">Deep Ocean</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">inpm's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">xd-cli</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2019-04-03</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="npm"> npm</a></span></div><div class="post-intro-read"><span> Word count: <span class="post-count">976</span> | Reading time: <span class="post-count">3</span>min</span></div></div></header><article class="cxo-up" id="cxo-content-outer"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86" style="margin-left:36em" src="//music.163.com/outchain/player?type=2&amp;id=1352896581&amp;auto=0&amp;height=66"></iframe><section id="cxo-content-inner"><article class="article-entry" id="post"><h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><ul>
 <li>工作也差不多满一年了，对于基本的业务开发有了一些自己的想法</li>
 <li>刚开始工作的前3个月，每天都可以接触到新东西，接触新业务</li>
 <li>3个月之后业务开发熟悉了对于自己的技术成长就感觉受到了局限</li>
@@ -140,6 +140,60 @@
 <li>此xd-cli包就是为工作的第一年画上句号</li>
 <li>展望第二年准备学习一个后端语言go/nodejs、学习开发原生ios、熟悉用Linux、最后还是巩固基础（网络层/应用层）</li>
 </ul>
+<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><blockquote>
+<p>开始之前我需要准备什么？</p>
+<ul>
+<li>mkdir 项目名称</li>
+<li>npm init</li>
+<li>remote至远程仓库</li>
+<li>核心功能开发</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>项目结构啥样的？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">├── LICENSE</span><br><span class="line">├── OTP.md <span class="comment">// 双因素身份验证</span></span><br><span class="line">├── README.md</span><br><span class="line">├── bin <span class="comment">// 命令式核心功能模块</span></span><br><span class="line">│   ├── ip.js</span><br><span class="line">│   ├── list.js</span><br><span class="line">│   ├── rar.js</span><br><span class="line">│   ├── server.js</span><br><span class="line">│   └── tinify.js</span><br><span class="line">├── index.js <span class="comment">// 文件主入口</span></span><br><span class="line">├── lib <span class="comment">// 存常量</span></span><br><span class="line">│   └── templates.js</span><br><span class="line">├── package-lock.json</span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>如何制作命令并调用相应功能模块代码，类似<code>ip</code>就调用/bin/ip.js?</p>
+<ul>
+<li>cd bin</li>
+<li>touch ip.js</li>
+<li>vi ip.js</li>
+<li>第一行插入<code>#!/usr/bin/env node</code>，这是指定运行环境需在node下</li>
+<li>导入需要模块后npm i xx –save，实现逻辑代码，具体代码就不贴了（已开源，末尾有github地址）</li>
+<li>vi package.json，生成ip命令<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"bin"</span>: &#123;</span><br><span class="line">    <span class="string">"ip"</span>: <span class="string">"./bin/ip.js"</span>,</span><br><span class="line">    <span class="string">"server"</span>: <span class="string">"./bin/server.js"</span>,</span><br><span class="line">    <span class="string">"tinify"</span>: <span class="string">"./bin/tinify.js"</span>,</span><br><span class="line">    <span class="string">"rar"</span>: <span class="string">"./bin/rar.js"</span>,</span><br><span class="line">    <span class="string">"xd"</span>: <span class="string">"index.js"</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>Last but the least, 生成软连接<code>npm link</code></li>
+</ul>
+<blockquote>
+<p>说明下几个关键模块是干嘛的？(自己去npm上搜)</p>
+<ul>
+<li>commander，总之就是制作命令的</li>
+<li>chalk，让你的打印输出变成彩色</li>
+<li>inquirer，用于跟用户交互的</li>
+<li>download-git-repo，顾名思义</li>
+<li>ora，loading模块，等待时间长有个转圈圈的，用户体验好</li>
+<li>open，用你默认浏览器打开一个网址</li>
+<li>tinify，🐼压缩用到里面的api</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>功能做好了，我要发布出去给大家用，咋弄？(百度呗)</p>
+<ul>
+<li>逗你的啦</li>
+<li><code>npm publish</code></li>
+<li>注意一点，每次要发版本前记得改下version</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>如何在实现过程中遇到除上面之外问题咋办?</p>
+<ul>
+<li>百度</li>
+<li>给我留言(ps:提issue)</li>
+</ul>
+</blockquote>
 <h1 id="附件📎"><a href="#附件📎" class="headerlink" title="附件📎"></a>附件📎</h1><ul>
 <li><a href="https://www.npmjs.com/package/xd-cli" target="_blank" rel="noopener">npm地址</a></li>
 </ul>
@@ -165,4 +219,4 @@ gitment.render('container')</script></div></section></article><footer id="cxo-fo
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script><canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas><script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script type="text/javascript" src="/js/fireworks.js"></script></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#过程"><span class="toc-number">2.</span> <span class="toc-text">过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#预想实现功能"><span class="toc-number">2.1.</span> <span class="toc-text">预想实现功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目模版是主要功能点"><span class="toc-number">2.2.</span> <span class="toc-text">项目模版是主要功能点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公用UI组件库"><span class="toc-number">2.3.</span> <span class="toc-text">公用UI组件库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结果"><span class="toc-number">3.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#附件📎"><span class="toc-number">4.</span> <span class="toc-text">附件📎</span></a></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
+</script><canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas><script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script type="text/javascript" src="/js/fireworks.js"></script></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#起因"><span class="toc-number">1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#过程"><span class="toc-number">2.</span> <span class="toc-text">过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#预想实现功能"><span class="toc-number">2.1.</span> <span class="toc-text">预想实现功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目模版是主要功能点"><span class="toc-number">2.2.</span> <span class="toc-text">项目模版是主要功能点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公用UI组件库"><span class="toc-number">2.3.</span> <span class="toc-text">公用UI组件库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结果"><span class="toc-number">3.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现过程"><span class="toc-number">4.</span> <span class="toc-text">实现过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#附件📎"><span class="toc-number">5.</span> <span class="toc-text">附件📎</span></a></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
