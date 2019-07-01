@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Todo-list</title>
+      <link href="/2019/07/01/todo-list/"/>
+      <url>/2019/07/01/todo-list/</url>
+      
+        <content type="html"><![CDATA[<p>-上午-</p><ul><li>检查邮件，查看最新招聘信息 (30min)</li><li>针对性复习巩固并刷一题leetcode (30min)</li><li>学习一个新知识点并做周总结 (30min)</li><li>做公司业务</li></ul><p>-吃饭休息-</p><p>-下午-</p><ul><li>浏览并思考 (30min)</li><li>完善个人项目 (1h)</li><li>做公司业务</li></ul><p>-下班-</p><ul><li>约会健身 / 吃好吃的 (1h)</li><li>回家打游戏咯～ (2h)</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> other </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> other </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于做项目的思考</title>
       <link href="/2019/05/31/about-project/"/>
       <url>/2019/05/31/about-project/</url>
