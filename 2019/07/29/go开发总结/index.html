@@ -1,0 +1,163 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="inpm.cy@gmail.com"><meta name="renderer" content="webkit"><meta name="copyright" content="inpm.cy@gmail.com"><meta name="keywords" content="inpm"><meta name="description" content="个人博客，重在分享"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>go开发总结 · inpm's Blog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
+
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
+
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
+
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
+
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
+
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
+
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
+
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
+
+
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/img/assets/cat.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">inpm</div><div class="profile-signature">！ dlrow olleH</div><div class="friends"><div>FRIENDS</div><span><a href="http://www.ruanyifeng.com/home.html" target="_black">ruanyifeng</a></span><span><a href="https://aotu.io/" target="_black">Aotu</a></span><span><a href="http://www.alloyteam.com" target="_black">AlloyTeam</a></span><span><a href="https://taobaofed.org" target="_black">FED</a></span><span><a href="https://fex.baidu.com" target="_black">FEX</a></span><span><a href="http://dopro.io/" target="_black">Deep Ocean</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">inpm's Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">go开发总结</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2019-07-29</span></span><span class="post-intro-tags"><a class="intro-tag fa fa-tag" href="javascript:void(0)" date-tags="go"> go</a></span></div><div class="post-intro-read"><span> Word count: <span class="post-count">594</span> | Reading time: <span class="post-count">2</span>min</span></div></div></header><article class="cxo-up" id="cxo-content-outer"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86" style="margin-left:36em" src="//music.163.com/outchain/player?type=2&amp;id=1352896581&amp;auto=0&amp;height=66"></iframe><section id="cxo-content-inner"><article class="article-entry" id="post"><h2 id="题外话-ps-可以跳过"><a href="#题外话-ps-可以跳过" class="headerlink" title="题外话(ps:可以跳过)"></a>题外话(ps:<em>可以跳过</em>)</h2><p>单纯想学一门后端开发的语言，开始呢想用nodejs吧，也熟悉一点，不过放弃了<br>理由:干嘛不学点新东西</p>
+<p>了解过后，看到Google弄了一个Go而且没出几年，果断入坑，贴一下go的宣传标语</p>
+<blockquote>
+<p>用更少的代码，更短的编译时间，创建运行更快的程序，享受更多的乐趣<br>以下就是他们讨论得出的对编程语言的设计要求：</p>
+<blockquote>
+<ul>
+<li>能够以更快的速度开发软件</li>
+<li>开发出的软件能够很好地在现代的多核计算机上工作</li>
+<li>开发出的软件能够很好地在网络环境下工作</li>
+<li>使人们能够享受软件开发的过程</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>这还有什么理由不选它呢</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>这里推荐3个学习基础的网站，要学习一门新的语言基础语法、安装这些都是逃不过的</p>
+<ul>
+<li><a href="https://go.wuhaolin.cn/the-way-to-go/" target="_blank" rel="noopener">Go入门指南</a></li>
+<li><a href="https://gobyexample.com/" target="_blank" rel="noopener">Go例子</a></li>
+<li><a href="https://tour.golang.org/welcome/1" target="_blank" rel="noopener">在线写demo</a></li>
+</ul>
+<h3 id="Go的环境搭建也非常简单："><a href="#Go的环境搭建也非常简单：" class="headerlink" title="Go的环境搭建也非常简单："></a>Go的环境搭建也非常简单：</h3><ul>
+<li>第一步: 打开浏览器，到这里<a href="https://golang.org/dl/" target="_blank" rel="noopener">Go下载页面</a></li>
+<li>第二步: 选择符合你系统的source点击下载</li>
+<li>第三步: 一直下一步知道完成安装</li>
+<li>第四步: 查看本地go环境变量 <strong>$GOROOT</strong> <strong>$GOARCH</strong> <strong>$GOOS</strong> <strong>$GOBIN</strong> (默认都在$HOME/go)</li>
+</ul>
+<h3 id="为了测试你是否安装成功？"><a href="#为了测试你是否安装成功？" class="headerlink" title="为了测试你是否安装成功？"></a>为了测试你是否安装成功？</h3><p><code>cd ~</code><br><code>touch hello.go</code><br>粘贴以下代码</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"Hello, 世界"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>go run hello.go</code></p>
+<p>输出<strong>“Hello, 世界”</strong>即表示安装成功</p>
+<h3 id="这些看到什么时候开始搞项目代码呢？"><a href="#这些看到什么时候开始搞项目代码呢？" class="headerlink" title="这些看到什么时候开始搞项目代码呢？"></a>这些看到什么时候开始搞项目代码呢？</h3><p>我的想法是至少做到以下几点:<br>1.<strong>关键字</strong>、<strong>标识符</strong>、<strong>后缀名</strong>、<strong>变量基本数据类型</strong>、<strong>运算符</strong><br>2.基础语法 <strong>变量定义</strong>、<strong>if-else</strong>、<strong>for循环</strong>、<strong>函数声明</strong><br>3.会用<strong>package</strong> <a href="https://godoc.org/" target="_blank" rel="noopener">这里可以找你要的包</a></p>
+<h2 id="开发经验总结"><a href="#开发经验总结" class="headerlink" title="开发经验总结"></a>开发经验总结</h2><h2 id="实战项目分析"><a href="#实战项目分析" class="headerlink" title="实战项目分析"></a>实战项目分析</h2><h2 id="个人想法"><a href="#个人想法" class="headerlink" title="个人想法"></a>个人想法</h2><ul>
+<li>能做高并发的同时节约服务器资源，小服务的话用一个路由器都可以跑起来(ps:<strong>说人话！省钱！</strong>)</li>
+<li>📦打包快、体积轻，部署简单<code>go build</code></li>
+<li>取精华、剔糟粕，性能是真的好呀</li>
+<li>这里省略一万个彩虹屁</li>
+</ul>
+<h2 id="其他一些东西"><a href="#其他一些东西" class="headerlink" title="其他一些东西"></a>其他一些东西</h2><ul>
+<li>优雅而规范的写Go代码<a href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener">CodeReviewComments</a></li>
+<li>通过配置，使得 vim 可以看起来像 ide 一样来开发 Go <a href="https://github.com/BroQiang/vim-go-ide" target="_blank" rel="noopener">Vim Go IDE</a></li>
+</ul>
+</article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="https://inpm.top">inpm.cy@gmail.com</a></p><p> <span>Link:  </span><a href="https://inpm.top/2019/07/29/go开发总结/">https://inpm.top/2019/07/29/go开发总结/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license" href="https://c-yyy.github.io/">inpm</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="nextSlogan" href="/2019/07/09/React16-reward/" title="React16复习总结"><span>NextPost ></span><br><span class="nextTitle">React16复习总结</span></a><div class="clear"></div></div><div id="comment"><div id="container"></div><link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css"><script src="https://jjeejj.github.io/js/gitment.js"></script><script>var gitment = new Gitment({
+  id: 'go开发总结',
+  owner: 'c-yyy',
+  repo: 'c-yyy.github.io',
+  oauth: {
+    client_id: 'fe157596ffeca29e1a9e',
+    client_secret: '0af09328f45e9ef5f146802f8a017a536b3c27ad',
+  },
+})
+gitment.render('container')</script></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span><script>var time = setInterval(function() {
+  if(document.getElementById("busuanzi_value_site_uv") && document.getElementById("busuanzi_value_site_pv")) {
+    clearInterval(time);
+    document.getElementById("busuanzi_value_site_uv").innerHTML = 98954 + parseInt(document.getElementById("busuanzi_value_site_uv").innerHTML);
+    document.getElementById("busuanzi_value_site_pv").innerHTML = 320618 + parseInt(document.getElementById("busuanzi_value_site_pv").innerHTML);
+  }
+}, 3000);</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?" + 'f89462936817407c15d2ab6ce0033780';
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas><script defer type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script defer type="text/javascript" src="/js/fireworks.js"></script></div></footer><!-- catelog--><div class="toc-wrapper" style="top: 70vh;"><div class="toc-catalog"><i class="fa fa-list"> </i><span>CATALOG</span></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题外话-ps-可以跳过"><span class="toc-number">1.</span> <span class="toc-text">题外话(ps:可以跳过)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-number">2.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Go的环境搭建也非常简单："><span class="toc-number">2.1.</span> <span class="toc-text">Go的环境搭建也非常简单：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为了测试你是否安装成功？"><span class="toc-number">2.2.</span> <span class="toc-text">为了测试你是否安装成功？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这些看到什么时候开始搞项目代码呢？"><span class="toc-number">2.3.</span> <span class="toc-text">这些看到什么时候开始搞项目代码呢？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发经验总结"><span class="toc-number">3.</span> <span class="toc-text">开发经验总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实战项目分析"><span class="toc-number">4.</span> <span class="toc-text">实战项目分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个人想法"><span class="toc-number">5.</span> <span class="toc-text">个人想法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他一些东西"><span class="toc-number">6.</span> <span class="toc-text">其他一些东西</span></a></li></ol></div><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>

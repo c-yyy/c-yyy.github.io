@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>go开发总结</title>
+      <link href="/2019/07/29/go%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"/>
+      <url>/2019/07/29/go%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题外话-ps-可以跳过"><a href="#题外话-ps-可以跳过" class="headerlink" title="题外话(ps:可以跳过)"></a>题外话(ps:<em>可以跳过</em>)</h2><p>单纯想学一门后端开发的语言，开始呢想用nodejs吧，也熟悉一点，不过放弃了<br>理由:干嘛不学点新东西</p><p>了解过后，看到Google弄了一个Go而且没出几年，果断入坑，贴一下go的宣传标语</p><blockquote><p>用更少的代码，更短的编译时间，创建运行更快的程序，享受更多的乐趣<br>以下就是他们讨论得出的对编程语言的设计要求：</p><blockquote><ul><li>能够以更快的速度开发软件</li><li>开发出的软件能够很好地在现代的多核计算机上工作</li><li>开发出的软件能够很好地在网络环境下工作</li><li>使人们能够享受软件开发的过程</li></ul></blockquote></blockquote><p>这还有什么理由不选它呢</p><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>这里推荐3个学习基础的网站，要学习一门新的语言基础语法、安装这些都是逃不过的</p><ul><li><a href="https://go.wuhaolin.cn/the-way-to-go/" target="_blank" rel="noopener">Go入门指南</a></li><li><a href="https://gobyexample.com/" target="_blank" rel="noopener">Go例子</a></li><li><a href="https://tour.golang.org/welcome/1" target="_blank" rel="noopener">在线写demo</a></li></ul><h3 id="Go的环境搭建也非常简单："><a href="#Go的环境搭建也非常简单：" class="headerlink" title="Go的环境搭建也非常简单："></a>Go的环境搭建也非常简单：</h3><ul><li>第一步: 打开浏览器，到这里<a href="https://golang.org/dl/" target="_blank" rel="noopener">Go下载页面</a></li><li>第二步: 选择符合你系统的source点击下载</li><li>第三步: 一直下一步知道完成安装</li><li>第四步: 查看本地go环境变量 <strong>$GOROOT</strong> <strong>$GOARCH</strong> <strong>$GOOS</strong> <strong>$GOBIN</strong> (默认都在$HOME/go)</li></ul><h3 id="为了测试你是否安装成功？"><a href="#为了测试你是否安装成功？" class="headerlink" title="为了测试你是否安装成功？"></a>为了测试你是否安装成功？</h3><p><code>cd ~</code><br><code>touch hello.go</code><br>粘贴以下代码</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"Hello, 世界"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>go run hello.go</code></p><p>输出<strong>“Hello, 世界”</strong>即表示安装成功</p><h3 id="这些看到什么时候开始搞项目代码呢？"><a href="#这些看到什么时候开始搞项目代码呢？" class="headerlink" title="这些看到什么时候开始搞项目代码呢？"></a>这些看到什么时候开始搞项目代码呢？</h3><p>我的想法是至少做到以下几点:<br>1.<strong>关键字</strong>、<strong>标识符</strong>、<strong>后缀名</strong>、<strong>变量基本数据类型</strong>、<strong>运算符</strong><br>2.基础语法 <strong>变量定义</strong>、<strong>if-else</strong>、<strong>for循环</strong>、<strong>函数声明</strong><br>3.会用<strong>package</strong> <a href="https://godoc.org/" target="_blank" rel="noopener">这里可以找你要的包</a></p><h2 id="开发经验总结"><a href="#开发经验总结" class="headerlink" title="开发经验总结"></a>开发经验总结</h2><h2 id="实战项目分析"><a href="#实战项目分析" class="headerlink" title="实战项目分析"></a>实战项目分析</h2><h2 id="个人想法"><a href="#个人想法" class="headerlink" title="个人想法"></a>个人想法</h2><ul><li>能做高并发的同时节约服务器资源，小服务的话用一个路由器都可以跑起来(ps:<strong>说人话！省钱！</strong>)</li><li>📦打包快、体积轻，部署简单<code>go build</code></li><li>取精华、剔糟粕，性能是真的好呀</li><li>这里省略一万个彩虹屁</li></ul><h2 id="其他一些东西"><a href="#其他一些东西" class="headerlink" title="其他一些东西"></a>其他一些东西</h2><ul><li>优雅而规范的写Go代码<a href="https://github.com/golang/go/wiki/CodeReviewComments" target="_blank" rel="noopener">CodeReviewComments</a></li><li>通过配置，使得 vim 可以看起来像 ide 一样来开发 Go <a href="https://github.com/BroQiang/vim-go-ide" target="_blank" rel="noopener">Vim Go IDE</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> go </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>React16复习总结</title>
       <link href="/2019/07/09/React16-reward/"/>
       <url>/2019/07/09/React16-reward/</url>
