@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>为2020搭建自己的技术壁垒</title>
+      <link href="/2019/09/12/%E4%B8%BA2020%E5%87%86%E5%A4%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%A3%81%E5%9E%92/"/>
+      <url>/2019/09/12/%E4%B8%BA2020%E5%87%86%E5%A4%87%E7%9A%84%E6%8A%80%E6%9C%AF%E5%A3%81%E5%9E%92/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Why"><a href="#Why" class="headerlink" title="Why?"></a>Why?</h1><p>照工作年限算，截止2020年5月，已有2年工作经验，为了更好的过渡到中高级前端or全栈，打算有计划的把已经学会和准备要学的技术、知识做一个完善的总结，构建属于自己的知识体系，搭建技术壁垒。通过查询各大招聘网站，2年是一个从初级迈向中高级的重要分割线，大部分招1-3年的是初、中级多，而往3年以上就是中、高级偏多了，那么站在公司的角度思考，如何区分初级和中高级呢？难道就是工作年限吗？不～核心还是技术、能力、团队。可能初级只是接收清晰明确的需求，并按部就班完成，中间遇到的问题大部分都还是技术细节，称不上难题，只要有搜索引擎🔍都能引刃而解，而当迈向中、高级，在满足初级能做的一切之上，还必须或尽可能拥有解决难题、考虑周全、团队意识、表达逻辑等等综合能力的提升。</p><p>从我本身考虑，应该会继续在这一行干好多年吧，其他行业暂时不知道喜欢什么，所以既然选择了这，那么就全力以赴吧，三百六十行，每一行想要做的长远，必要的职业规划是一定有的，我写下这篇文章即是对未来工作的目标以及大方向。</p><p>如果过些年，我没有能在这一行了，希望自己可以坚持经常写博客总结的习惯，培养自主学习能力，当然也希望能看到这篇文章的同学，可以有所启发。</p><h1 id="How"><a href="#How" class="headerlink" title="How?"></a>How?</h1><p>总体会从以下两个方向进行</p><ul><li>全盘总结归纳已经学会的知识</li><li>拓展工作中能接触到的技能树</li></ul><h3 id="温故而知新，可以为师矣"><a href="#温故而知新，可以为师矣" class="headerlink" title="温故而知新，可以为师矣"></a>温故而知新，可以为师矣</h3><p><img src="../imgs/2020-1.png" alt="知识体系"></p><h3 id="拓展技能树"><a href="#拓展技能树" class="headerlink" title="拓展技能树"></a>拓展技能树</h3><p><img src="../imgs/2020-2.png" alt="拓展技能树"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> doc </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iwant </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python爬旅游景点并导出Excel</title>
       <link href="/2019/08/23/python%E7%88%AC%E6%97%85%E6%B8%B8%E6%99%AF%E7%82%B9%E5%B9%B6%E5%AF%BC%E5%87%BAExcel/"/>
       <url>/2019/08/23/python%E7%88%AC%E6%97%85%E6%B8%B8%E6%99%AF%E7%82%B9%E5%B9%B6%E5%AF%BC%E5%87%BAExcel/</url>
@@ -158,7 +183,7 @@
       <link href="/2019/04/11/fe-summary-png/"/>
       <url>/2019/04/11/fe-summary-png/</url>
       
-        <content type="html"><![CDATA[<p><img src="https://github.com/c-yyy/Frontend-Summary/blob/master/Frontend.png" alt="前端知识点整理图谱"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="../imgs/Frontend.png" alt="前端知识点整理图谱"></p>]]></content>
       
       
       <categories>
